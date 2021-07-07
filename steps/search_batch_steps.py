@@ -2,16 +2,8 @@ from behave import when, then
 
 
 '''Successful Search'''
-@when(u'The Instructor types Python into the Search Bar')
-def step_impl(context):
-    raise NotImplementedError(u'STEP: When The Instructor types Python into the Search Bar')
-
-@when(u'The Instructor types Java into the Search Bar')
-def step_impl(context):
-    raise NotImplementedError(u'STEP: When The Instructor types Java into the Search Bar')
-
-@when(u'The Instructor types C# into the Search Bar')
-def step_impl(context):
+@when(u'The Instructor types {name} into the Search Bar')
+def step_impl(context, name: str):
     raise NotImplementedError(u'STEP: When The Instructor types C# into the Search Bar')
 
 @then(u'A list of results is displayed beneath the Search Bar')
