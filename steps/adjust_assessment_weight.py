@@ -29,3 +29,8 @@ def clicks_save_button(context):
 @then('The test-weight popup should disappear')
 def test_save_popup_disappears(context):
     pass
+
+
+@then('The the test-weight indicator should be <num>')
+def test_weight_indicator_is(context, num):
+    pass
