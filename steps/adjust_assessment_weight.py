@@ -17,7 +17,7 @@ def the_test_weight_popup_isvisible(context):
 
 
 @then('The Instructor moves the dial to {num}')
-def moves_dial(context, num):
+def moves_dial(context, num: int):
     pass
 
 
@@ -32,5 +32,5 @@ def test_save_popup_disappears(context):
 
 
 @then('The the test-weight indicator should be <num>')
-def test_weight_indicator_is(context, num):
+def test_weight_indicator_is(context, num: int):
     pass
