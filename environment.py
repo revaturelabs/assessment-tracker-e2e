@@ -10,8 +10,7 @@ from poms.home_page import HomePage
 def before_all(context: Context):
     options = webdriver.ChromeOptions()
     options.add_experimental_option('excludeSwitches', ['enable-logging'])
-    driver: WebDriver = webdriver.Chrome('drivers/chromedriver.exe', options=options)
-    context.driver = driver
+    context.driver = webdriver.Chrome('drivers/chromedriver.exe', options=options)
 
     context.home_page = HomePage(context.driver)
     context.batch_home = BatchHomePage(context.driver)
