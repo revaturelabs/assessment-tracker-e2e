@@ -5,13 +5,13 @@ def step_impl(context, batch: str):
     pass
 
 
-@when(u'The Instructor clicks on an Associate <name> from a list')
+@when(u'The Instructor clicks on an Associate {name} from a list')
 def step_impl(context, name: str):
     pass
 
 
-@when(u'The Instructor sets a grade for an <assessment>')
-def step_impl(context, assessment:str):
+@when(u'The Instructor sets a grade for an {assessment}')
+def step_impl(context, assessment: str):
     pass
 
 
