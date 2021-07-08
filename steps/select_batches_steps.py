@@ -17,4 +17,4 @@ def step_impl(context, batch: str):
 
 @then('The title should say {title}')
 def step_impl(context, title: str):
-    assert context.driver.title == str
+    assert context.driver.title == title
