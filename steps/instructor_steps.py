@@ -1,5 +1,4 @@
 from time import sleep
-
 from behave import given, when, then
 from selenium.common.exceptions import NoSuchElementException, TimeoutException
 from selenium.webdriver.common.by import By
