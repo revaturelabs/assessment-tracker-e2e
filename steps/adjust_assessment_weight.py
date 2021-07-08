@@ -1,9 +1,9 @@
 from behave import given, when, then
 
 
-@given('The Instructor is on a page for a Batch')
-def instructor_is_on_a_batch_page(context):
-    pass
+# @given('The Instructor is on a page for a Batch')
+# def instructor_is_on_a_batch_page(context):
+#     pass
 
 
 @when('The Instructor clicks on a quiz')
