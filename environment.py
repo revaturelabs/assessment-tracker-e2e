@@ -5,6 +5,7 @@ from selenium.webdriver.chrome.webdriver import WebDriver
 from poms.assessments import AssessmentsPage
 from poms.batch_home_page import BatchHomePage
 from poms.home_page import HomePage
+from poms.nav_bar_page import NavBarPage
 
 
 def before_all(context: Context):
@@ -15,6 +16,9 @@ def before_all(context: Context):
     context.home_page = HomePage(context.driver)
     context.batch_home_page = BatchHomePage(context.driver)
     context.assessments_page = AssessmentsPage(context.driver)
+    context.nav_bar_page = NavBarPage(context.driver)
+
+    context.driver.maximize_window()
 
 
 def after_all(context: Context):
