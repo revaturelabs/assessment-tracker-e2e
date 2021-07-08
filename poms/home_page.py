@@ -17,6 +17,9 @@ class HomePage:
     def login_cred_button(self):
         return self.driver.find_element_by_xpath('//*[@id="loginform"]/div[2]/div[2]/button[1]')
 
+    def logout_button(self):
+        return self.driver.find_element_by_xpath('//*[@id="logoutModal"]/div/div/div[2]/div[2]/button[1]')
+
     # The button for a user to click on to view that specific batches information
     def batch_button(self):
         return self.driver.find_element_by_xpath('//*[@id="batch_2020"]/button')
