@@ -1,4 +1,4 @@
-#Legacy code, can probably be deleted after gathering any useful information from it
+# Legacy code, can probably be deleted after gathering any useful information from it
 
 # from time import sleep
 #
