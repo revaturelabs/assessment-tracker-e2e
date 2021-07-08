@@ -13,7 +13,7 @@ def before_all(context: Context):
     context.driver = webdriver.Chrome('drivers/chromedriver.exe', options=options)
 
     context.home_page = HomePage(context.driver)
-    context.batch_home = BatchHomePage(context.driver)
+    context.batch_home_page = BatchHomePage(context.driver)
     context.assessments_page = AssessmentsPage(context.driver)
 
 
