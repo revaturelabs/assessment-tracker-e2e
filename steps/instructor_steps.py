@@ -23,7 +23,7 @@ def step_impl(context):
     except NoSuchElementException:
         assert False
 
-
+        
 @given(u'The Instructor is on a page for a Batch')
 def step_impl(context):
     context.home_page.batch_button().click()
