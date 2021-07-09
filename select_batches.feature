@@ -14,6 +14,9 @@ Feature: Select Batches
     Given The User is logged in as an Instructor
     When The User clicks on a batch <batch_id>
     Then The title should say <title>
+    When The User logs out
+    Then The title should say <title2>
     Examples:
-      | batch_id | title |
-      | temp | Assessment Tracker - Batches by Week |
+      | batch_id | title | title2 |
+      | temp | Assessment Tracker - Batches by Week | Assessment Tracker - Home |
+      | temp2 | Assessment Tracker - Batches by Week | Assessment Tracker - Home |
