@@ -1,5 +1,6 @@
 from selenium.webdriver.chrome.webdriver import WebDriver
 
+
 class NavBarPage:
 
     def __init__(self, driver: WebDriver):

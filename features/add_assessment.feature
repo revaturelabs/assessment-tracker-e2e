@@ -14,4 +14,3 @@ Feature: Add Assessment
       |C++            |One-on-Ones      |The Selenium   |
       |C#             |Project          |El Selenium    |
       |iOS Development|QC               |iOS Selenium   |
-

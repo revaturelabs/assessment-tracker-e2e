@@ -1,5 +1,3 @@
-# Legacy code, can be refactored at will
-
 from selenium.webdriver.chrome.webdriver import WebDriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.wait import WebDriverWait
@@ -17,6 +15,7 @@ test_2_save: str = '//*[@id="GiveScoreForm15"]/div[2]/button[1]'
 test_3_name: str = '//*[@id="associate10"]/a'
 test_3_assessment: str = "score16"
 test_3_save: str = '//*[@id="GiveScoreForm16"]/div[2]/button[1]'
+
 
 class BatchHomePage:
     def __init__(self, driver: WebDriver):
@@ -40,7 +39,7 @@ class BatchHomePage:
 
     def close_assessment_button(self):
         return self.driver.find_element_by_xpath('//*[@id="createAssessmentForm"]/div[4]/button[2]')
-      
+
     def adjust_weight_modal(self):
         return self.driver.find_element_by_id("adjustWeightModal")
 
@@ -50,7 +49,7 @@ class BatchHomePage:
 
     def weight_slider(self):
         wait = WebDriverWait(self.driver, 10)
-        return wait.until(EC.visibility_of_element_located((By.ID,"weightControl")))
+        return wait.until(EC.visibility_of_element_located((By.ID, "weightControl")))
 
     def slider_submit_btn(self):
         wait = WebDriverWait(self.driver, 10)

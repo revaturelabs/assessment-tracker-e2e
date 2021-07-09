@@ -1,14 +1,6 @@
-import time
-
-from behave import given, when, then
+from behave import when, then
 from selenium.webdriver.remote.webelement import WebElement
 from selenium.webdriver.common.action_chains import ActionChains
-from selenium.webdriver.support.wait import WebDriverWait
-from selenium.webdriver.support import expected_conditions as EC
-
-# @given('The Instructor is on a page for a Batch')
-# def instructor_is_on_a_batch_page(context):
-#     pass
 
 
 @when('The Instructor clicks on a quiz')

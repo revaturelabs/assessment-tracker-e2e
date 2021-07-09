@@ -1,16 +1,4 @@
-from behave import given, when, then
-from selenium.common.exceptions import ElementNotInteractableException
-
-
-
-# @given('The Instructor is on a page for a specific {batch}')
-# def step_impl(context, batch: str):
-#     if batch == "Python - 20200120":
-#         context.home_page.batch_button_1().click()
-#     elif batch == "iOS Development - 20210320":
-#         context.home_page.batch_button_2().click()
-#     elif batch == "C++ - 20202222":
-#         context.home_page.batch_button_3().click()
+from behave import when, then
 
 
 @when(u'The Instructor clicks on an Associate {name} from a list')
