@@ -43,23 +43,6 @@ def step_impl(context, name: str):
     context.batch_home_page.assessment_title().send_keys(name)
 
 
-# @when(u'The Instructor selects the assessment type')
-# def step_impl(context):
-#     try:
-#         WebDriverWait(context.driver, 1).until(
-#             EC.element_to_be_clickable((By.ID, "assessment-type"))
-#         )
-#     except (TimeoutException, NoSuchElementException):
-#         assert False
-#     select = Select(context.batch_home_page.assessment_type())
-#     select.select_by_value('1')
-#
-#
-# @when(u'The Instructor enters a name for the Assessment')
-# def step_impl(context):
-#     context.batch_home_page.assessment_title().send_keys("Selenium stuff")
-
-
 @when(u'The Instructor clicks the button to create the Assessment')
 def step_impl(context):
     context.batch_home_page.create_assessment_button().click()

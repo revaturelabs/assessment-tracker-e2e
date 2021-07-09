@@ -55,21 +55,3 @@ def step_impl(context, batch: str):
         )
     except NoSuchElementException:
         assert False
-
-
-# @given('The Instructor is on a page for a Batch')
-# def instructor_is_on_a_batch_page(context):
-#     try:
-#         WebDriverWait(context.driver, 5).until(
-#             EC.text_to_be_present_in_element((By.XPATH, '//*[@id="batch_2021"]/button'), "2")
-#         )
-#     except NoSuchElementException:
-#         assert False
-#
-#     context.home_page.python_batch_button().click()
-#     try:
-#         WebDriverWait(context.driver, 5).until(
-#             EC.title_is("Assessment Tracker - Batches by Week")
-#         )
-#     except NoSuchElementException:
-#         assert False
