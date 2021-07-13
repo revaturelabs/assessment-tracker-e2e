@@ -11,7 +11,7 @@
 # @given(u'The user is on home.html page')
 # def step_impl(context):
 #     driver = context.driver
-#     driver.get("http://34.204.173.118:5000/")
+#     driver.get("http://adam-ranieri-batch-1019.s3-website-us-east-1.amazonaws.com/")
 #     sleep(3)
 #
 #
