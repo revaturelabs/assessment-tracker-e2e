@@ -48,6 +48,7 @@ def step_impl(context):
     context.batch_home_page.create_assessment_button().click()
 
 
+# fails due to frontend functionality
 @then(u'The list of Assessments for that week is updated with the new one ({name})')
 def step_impl(context, name: str):
     context.batch_home_page.close_assessment_button().click()

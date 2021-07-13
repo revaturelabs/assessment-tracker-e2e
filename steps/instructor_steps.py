@@ -31,8 +31,8 @@ def step_impl(context):
 @given(u'The Instructor is on a page for a {batch} batch')
 def step_impl(context, batch: str):
     try:
-        WebDriverWait(context.driver, 5).until(
-            EC.text_to_be_present_in_element((By.XPATH, '//*[@id="batch_2021"]/button'), "2")
+        WebDriverWait(context.driver, 3).until(
+            EC.text_to_be_present_in_element((By.ID, "batch_2020"), "2")
         )
     except NoSuchElementException:
         assert False
