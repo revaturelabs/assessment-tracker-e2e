@@ -1,3 +1,5 @@
+import time
+
 from behave import when, then
 
 
@@ -42,4 +44,4 @@ def step_impl(context, button):
 
 @then(u'A message should tell the Instructor that their grade was saved')
 def step_impl(context):
-    context.driver.get("http://34.204.173.118:5000/home")
+    context.driver.get("http://adam-ranieri-batch-1019.s3-website-us-east-1.amazonaws.com/")
