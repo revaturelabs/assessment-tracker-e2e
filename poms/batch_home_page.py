@@ -31,8 +31,7 @@ class BatchHomePage:
         return self.driver.find_element_by_id("assessment-title")
 
     def week1_assessment_btn(self):
-        wait = WebDriverWait(self.driver, 10)
-        return wait.until(EC.element_to_be_clickable((By.XPATH, "//a[@id='assessment_18']")))
+        return self.driver.find_element_by_css_selector("a[onclick*='.assessment']")
 
     def create_assessment_button(self):
         return self.driver.find_element_by_xpath('//*[@id="createAssessmentForm"]/div[4]/button[1]')

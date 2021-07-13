@@ -8,7 +8,7 @@ from selenium.webdriver.support import expected_conditions as EC
 
 @given(u'The User is logged in as an Instructor')
 def step_impl(context):
-    context.driver.get("http://18.224.184.27:5000/home")
+    context.driver.get("http://adam-ranieri-batch-1019.s3-website-us-east-1.amazonaws.com/")
     try:
         WebDriverWait(context.driver, 1).until(
             EC.presence_of_element_located((By.CLASS_NAME, "trainerName"))
@@ -31,8 +31,8 @@ def step_impl(context):
 @given(u'The Instructor is on a page for a {batch} batch')
 def step_impl(context, batch: str):
     try:
-        WebDriverWait(context.driver, 5).until(
-            EC.text_to_be_present_in_element((By.XPATH, '//*[@id="batch_2021"]/button'), "2")
+        WebDriverWait(context.driver, 3).until(
+            EC.text_to_be_present_in_element((By.ID, "batch_2020"), "2")
         )
     except NoSuchElementException:
         assert False

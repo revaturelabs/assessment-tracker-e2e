@@ -16,14 +16,14 @@ def step_impl(context, name: str):
 
 @then(u'A list of results is displayed beneath the Search Bar that includes {name}')
 def step_impl(context, name: str):
-    WebDriverWait(context.driver, 10).until(
+    WebDriverWait(context.driver, 3).until(
         EC.text_to_be_present_in_element((By.XPATH, "/html/body/header/nav/div[2]/form/div/div[2]/div/a/strong"), name)
     )
 
 
 @when(u'The Instructor clicks on the result {name}')
 def step_impl(context, name: str):
-    WebDriverWait(context.driver, 10).until(
+    WebDriverWait(context.driver, 3).until(
         EC.text_to_be_present_in_element((By.XPATH, "/html/body/header/nav/div[2]/form/div/div[2]/div/a/strong"), name)
     )
     # Needed to ensure result is present on DOM
@@ -33,7 +33,7 @@ def step_impl(context, name: str):
 
 @then(u'They are taken to the page for that Batch')
 def step_impl(context):
-    WebDriverWait(context.driver, 10).until(
+    WebDriverWait(context.driver, 3).until(
         EC.title_is("Assessment Tracker - Batches by Week")
     )
     context.home_page.login_button().click()

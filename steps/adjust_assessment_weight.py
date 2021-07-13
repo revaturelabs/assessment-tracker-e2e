@@ -1,10 +1,21 @@
 from behave import when, then
+from selenium.common.exceptions import NoSuchElementException
+from selenium.webdriver.common.by import By
 from selenium.webdriver.remote.webelement import WebElement
 from selenium.webdriver.common.action_chains import ActionChains
+from selenium.webdriver.support.wait import WebDriverWait
+from selenium.webdriver.support import expected_conditions as EC
 
 
 @when('The Instructor clicks on a quiz')
 def instructor_selects_a_quiz(context):
+    try:
+        WebDriverWait(context.driver, 2).until(
+            EC.element_to_be_clickable((By.CSS_SELECTOR, "a[onclick*='.assessment']"))
+        )
+    except NoSuchElementException:
+        assert False
+
     context.batch_home_page.week1_assessment_btn().click()
 
 
@@ -19,8 +30,9 @@ def moves_dial(context, num: int):
     slider: WebElement = context.batch_home_page.weight_slider()
     action: ActionChains = ActionChains(context.driver)
     action.click_and_hold(slider)
+    action.drag_and_drop_by_offset(slider, -100, 0).release().perform()
     action.drag_and_drop_by_offset(slider, num, 0).release().perform()
-    assert slider.get_attribute("value") == "61"
+    assert slider.get_attribute("value") == str(num)
 
 
 @when('The Instructor clicks the save button')
