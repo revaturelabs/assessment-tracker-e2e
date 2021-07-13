@@ -8,7 +8,7 @@ from selenium.webdriver.support import expected_conditions as EC
 
 @given(u'The User is logged in as an Instructor')
 def step_impl(context):
-    context.driver.get("http://18.224.184.27:5000/home")
+    context.driver.get("http://adam-ranieri-batch-1019.s3-website-us-east-1.amazonaws.com/")
     try:
         WebDriverWait(context.driver, 1).until(
             EC.presence_of_element_located((By.CLASS_NAME, "trainerName"))
