@@ -22,26 +22,26 @@ class BatchHomePage:
         self.driver = driver
 
     def add_assessment_button(self):
-        return self.driver.find_element_by_id("addAssessmentBtn")
+        return WebDriverWait(self.driver, 3).until(EC.presence_of_element_located((By.ID, "addAssessmentBtn")))
 
     def assessment_type(self):
-        return self.driver.find_element_by_id("assessment-type")
+        return WebDriverWait(self.driver, 3).until(EC.presence_of_element_located((By.ID, "assessment-type")))
 
     def assessment_title(self):
-        return self.driver.find_element_by_id("assessment-title")
+        return WebDriverWait(self.driver, 3).until(EC.presence_of_element_located((By.ID, "assessment-title")))
 
     def week1_assessment_btn(self):
         wait = WebDriverWait(self.driver, 3)
         return wait.until(EC.element_to_be_clickable((By.CSS_SELECTOR, "a[onclick*='.assessment']")))
 
     def create_assessment_button(self):
-        return self.driver.find_element_by_xpath('//*[@id="createAssessmentForm"]/div[4]/button[1]')
+        return WebDriverWait(self.driver, 3).until(EC.presence_of_element_located((By.ID, "create_assessment_button")))
 
     def close_assessment_button(self):
-        return self.driver.find_element_by_xpath('//*[@id="createAssessmentForm"]/div[4]/button[2]')
+        return WebDriverWait(self.driver, 3).until(EC.presence_of_element_located((By.ID, "close_assessment_button")))
 
     def adjust_weight_modal(self):
-        return self.driver.find_element_by_id("adjustWeightModal")
+        return WebDriverWait(self.driver, 3).until(EC.presence_of_element_located((By.ID, "adjustWeightModal")))
 
     def adjust_weight_modal_hidden(self):
         wait = WebDriverWait(self.driver, 3)
@@ -52,8 +52,7 @@ class BatchHomePage:
         return wait.until(EC.visibility_of_element_located((By.ID, "weightControl")))
 
     def slider_submit_btn(self):
-        wait = WebDriverWait(self.driver, 3)
-        return wait.until(EC.element_to_be_clickable((By.XPATH, '//*[@id="adjustWeightForm"]/div[2]/button[1]')))
+        return WebDriverWait(self.driver, 3).until(EC.element_to_be_clickable((By.ID, "slider_submit_btn")))
 
     def get_name_1(self):
         return self.driver.find_element_by_css_selector(test_1_selec)

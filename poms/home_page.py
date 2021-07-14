@@ -19,19 +19,19 @@ class HomePage:
         return WebDriverWait(self.driver, 3).until(EC.presence_of_element_located((By.ID, "login_cred_button")))
 
     def logout_button(self):
-        return self.driver.find_element_by_id("loginBtn")
+        return WebDriverWait(self.driver, 3).until(EC.presence_of_element_located((By.ID, "logout_button")))
 
     def python_batch_button(self):
-        return self.driver.find_element_by_css_selector("button[onclick*='1']")
+        return WebDriverWait(self.driver, 3).until(EC.presence_of_element_located((By.ID, "Python_button_1")))
 
     def java_batch_button(self):
-        return self.driver.find_element_by_css_selector("button[onclick*='3']")
+        return WebDriverWait(self.driver, 3).until(EC.presence_of_element_located((By.ID, "Java_button_2")))
 
     def c_sharp_batch_button(self):
-        return self.driver.find_element_by_css_selector("button[onclick*='4']")
+        return WebDriverWait(self.driver, 3).until(EC.presence_of_element_located((By.ID, "C#_button_3")))
 
     def c_plus_plus_batch_button(self):
-        return self.driver.find_element_by_css_selector("button[onclick*='5']")
+        return WebDriverWait(self.driver, 3).until(EC.presence_of_element_located((By.ID, "C++_button_4")))
 
     def ios_development_batch_button(self):
-        return self.driver.find_element_by_css_selector("button[onclick*='6']")
+        return WebDriverWait(self.driver, 3).until(EC.presence_of_element_located((By.ID, "iOS Development_button_5")))
