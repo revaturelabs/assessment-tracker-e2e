@@ -1,3 +1,4 @@
+from poms.admin_page import AdminPage
 from behave.runner import Context
 from selenium import webdriver
 from selenium.webdriver.chrome.webdriver import WebDriver
@@ -17,6 +18,7 @@ def before_all(context: Context):
     context.batch_home_page = BatchHomePage(context.driver)
     context.assessments_page = AssessmentsPage(context.driver)
     context.nav_bar_page = NavBarPage(context.driver)
+    context.admin_page = AdminPage(context.driver)
 
     context.driver.maximize_window()
 
