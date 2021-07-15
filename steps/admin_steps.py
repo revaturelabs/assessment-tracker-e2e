@@ -11,7 +11,7 @@ def step_impl(context):
     context.driver.get("http://adam-ranieri-batch-1019.s3-website-us-east-1.amazonaws.com/")
     try:
         WebDriverWait(context.driver, 1).until(
-            EC.presence_of_element_located((By.CLASS_NAME, "trainerName"))
+            EC.presence_of_element_located((By.CLASS_NAME, "associateList"))
         )
     except TimeoutException:
         context.home_page.login_button().click()
@@ -20,9 +20,3 @@ def step_impl(context):
         # without this sleep function the login box will not disappear, DO NOT REMOVE
         sleep(1)
         context.home_page.login_cred_button().click()
-    try:
-        WebDriverWait(context.driver, 1).until(
-            EC.presence_of_element_located((By.CLASS_NAME, "trainerName"))
-        )
-    except NoSuchElementException:
-        assert False

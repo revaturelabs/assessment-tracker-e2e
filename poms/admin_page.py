@@ -45,7 +45,7 @@ class AdminPage:
     def associate_last_name_input(self):
 	    return self.driver.find_element_by_id('lastNameInput')
 
-    def cancel_new_assocaite_button(self):
+    def cancel_new_associate_button(self):
 	    return self.driver.find_element_by_id('cancelAddButton')
 	   
     def submit_new_associate_button(self):
