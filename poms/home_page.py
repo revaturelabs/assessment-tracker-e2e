@@ -21,6 +21,9 @@ class HomePage:
     def logout_button(self):
         return self.driver.find_element_by_id("loginBtn")
 
+    def confirm_logout_button(self):
+        return WebDriverWait(self.driver, 3).until(EC.element_to_be_clickable((By. ID, "logout_button")))
+
     def python_batch_button(self):
         return self.driver.find_element_by_css_selector("button[onclick*='1']")
 

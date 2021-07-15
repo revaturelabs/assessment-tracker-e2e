@@ -54,7 +54,7 @@ def step_impl(context, name: str):
     context.batch_home_page.close_assessment_button().click()
     try:
         WebDriverWait(context.driver, 3).until(
-            EC.text_to_be_present_in_element((By.ID, "week1Assessments"), name)
+            EC.text_to_be_present_in_element((By.ID, "mainbody"), name)
         )
     except (TimeoutException, NoSuchElementException):
         assert False
