@@ -9,7 +9,7 @@ from selenium.webdriver.support.select import Select
 @when(u'The Instructor clicks on a Plus Assessment Button')
 def step_impl(context):
     try:
-        WebDriverWait(context.driver, 2).until(
+        WebDriverWait(context.driver, 5).until(
             EC.element_to_be_clickable((By.ID, "addAssessmentBtn"))
         )
     except NoSuchElementException:
