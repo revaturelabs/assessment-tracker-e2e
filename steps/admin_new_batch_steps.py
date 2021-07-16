@@ -52,6 +52,7 @@ def step_impl(context):
 
 @when(u'The User enters ba into the search input')
 def step_impl(context):
+    WebDriverWait(context.driver, 1).until(EC.presence_of_all_elements_located((By.CLASS_NAME, "associateList")))
     context.admin_page.search_associate_input().send_keys("ba")
 
 
