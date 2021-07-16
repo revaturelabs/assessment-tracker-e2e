@@ -83,3 +83,21 @@ class BatchHomePage:
 
     def save_button_3(self):
         return self.driver.find_element_by_xpath(test_3_save)
+
+    def week_select(self):
+        return self.driver.find_element_by_id("week-num")
+
+    def associate_name(self):
+        return self.driver.find_element_by_id("associate-name-0")
+
+    def notes_box(self):
+        return self.driver.find_element_by_id("note_text")
+
+    def submit_notes(self):
+        return self.driver.find_element_by_id("submit_new_note_btn")
+
+    def close_note(self):
+        return self.driver.find_element_by_id("close_note_modal_btn")
+
+    def assessment_average(self):
+        return self.driver.find_element_by_id("average1")
