@@ -36,5 +36,3 @@ def step_impl(context):
     WebDriverWait(context.driver, 3).until(
         EC.title_is("Assessment Tracker - Batches by Week")
     )
-    context.home_page.login_button().click()
-    context.home_page.logout_button().click()

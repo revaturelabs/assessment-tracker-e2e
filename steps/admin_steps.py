@@ -18,7 +18,7 @@ def step_impl(context):
     except TimeoutException:
         try:
             WebDriverWait(context.driver, 1).until(
-                EC.presence_of_element_located((By.CLASS_NAME, "trainerName"))
+                EC.presence_of_element_located((By.ID, "yearsWorked"))
             )
             # this code will only execute if the user is logged in as a trainer
             context.home_page.logout_button().click()
@@ -29,7 +29,7 @@ def step_impl(context):
             admin_login(context)
     # final test to check if the user is logged in as an admin
     try:
-        WebDriverWait(context.driver, 1).until(
+        WebDriverWait(context.driver, 5).until(
             EC.presence_of_element_located((By.ID, "panels"))
         )
     except NoSuchElementException:
