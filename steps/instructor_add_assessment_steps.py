@@ -9,7 +9,7 @@ from selenium.webdriver.support.select import Select
 @when(u'The Instructor clicks on a Plus Assessment Button')
 def step_impl(context):
     try:
-        WebDriverWait(context.driver, 2).until(
+        WebDriverWait(context.driver, 5).until(
             EC.element_to_be_clickable((By.ID, "addAssessmentBtn"))
         )
     except NoSuchElementException:
@@ -54,7 +54,7 @@ def step_impl(context, name: str):
     context.batch_home_page.close_assessment_button().click()
     try:
         WebDriverWait(context.driver, 3).until(
-            EC.text_to_be_present_in_element((By.ID, "week1Assessments"), name)
+            EC.text_to_be_present_in_element((By.ID, "mainbody"), name)
         )
     except (TimeoutException, NoSuchElementException):
         assert False
