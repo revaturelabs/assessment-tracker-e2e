@@ -3,6 +3,8 @@ Feature: Admins can create new batches
     Given The User is logged in as an Admin
     When  The User enters a batch name in the batch name input
     When  The User enters a track name in the track name input
+    When  The User selects a trainer
+    When  The User selects a co-trainer
     When  The User enters an end date in the end date input
     When  The User selects five associates to be added to the new batch
     Then  The five selected associates should appear in the added associates list
@@ -14,6 +16,8 @@ Feature: Admins can create new batches
     When  The User enters a batch name in the batch name input
     When  The User enters a track name in the track name input
     When  The User enters an end date in the end date input
+    When  The User selects a trainer
+    When  The User selects a co-trainer
     When  The User enters ba into the search input
     Then  All associates in the associate list should start with ba
     When  The User selects the associates in the associate list

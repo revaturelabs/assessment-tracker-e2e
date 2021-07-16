@@ -1,7 +1,5 @@
 from selenium.webdriver.chrome.webdriver import WebDriver
-from selenium.webdriver.common.by import By
-from selenium.webdriver.support.wait import WebDriverWait
-from selenium.webdriver.support import expected_conditions as EC
+from selenium.webdriver.support.ui import Select
 
 class AdminPage:
     def __init__(self, driver: WebDriver):
@@ -18,6 +16,12 @@ class AdminPage:
 
     def end_date_input(self):
 	    return self.driver.find_element_by_id('endDate')
+
+    def trainer_input(self):
+	    return Select(self.driver.find_element_by_id('batchTrainer'))
+
+    def co_trainer_input(self):
+	    return Select(self.driver.find_element_by_id('batchCoTrainer'))
 
     def search_associate_input(self):
 	    return self.driver.find_element_by_id('searchAssociate')
