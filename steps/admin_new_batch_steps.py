@@ -24,12 +24,10 @@ def step_impl(context):
 @when(u'The User selects a trainer')
 def step_impl(context):
     context.admin_page.trainer_input().select_by_visible_text("Mark Mambo")
-    sleep(3)
 
 @when(u'The User selects a co-trainer')
 def step_impl(context):
     context.admin_page.co_trainer_input().select_by_visible_text("Bill Gates")
-    sleep(3)
 
 
 @when(u'The User selects five associates to be added to the new batch')
