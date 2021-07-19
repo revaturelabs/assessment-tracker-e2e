@@ -20,6 +20,9 @@ class AssessmentsPage:
     def save_grades_button(self):
         return self.driver.find_element_by_id("table_submit_button")
 
+    def grade_saved_alert(self):
+        return self.driver.find_element_by_id("batch_home_alerts")
+
     def table_rows(self):
         return self.driver.find_elements_by_css_selector("tr")[1:]
 
