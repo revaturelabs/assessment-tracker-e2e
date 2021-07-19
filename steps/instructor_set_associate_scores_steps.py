@@ -67,11 +67,7 @@ def step_impl(context):
 @then(u'A message should tell the Instructor that their grade was saved')
 def step_impl(context):
     try:
-        WebDriverWait(context.driver, 5).until(EC.alert_is_present())
-        alert = context.driver.switch_to.alert
-        alert.accept()
+        WebDriverWait(context.driver, 1).until(EC.visibility_of_element_located((By.ID, "batch_home_alerts")))
         assert True
     except TimeoutException:
         assert False
-    finally:
-        context.driver.get("http://adam-ranieri-batch-1019.s3-website-us-east-1.amazonaws.com/")
