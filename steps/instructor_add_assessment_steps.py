@@ -21,7 +21,7 @@ def step_impl(context):
 @when(u'The Instructor selects the assessment type {assessment_type}')
 def step_impl(context, assessment_type: str):
     try:
-        WebDriverWait(context.driver, 1).until(
+        WebDriverWait(context.driver, 3).until(
             EC.element_to_be_clickable((By.ID, "assessment-type"))
         )
     except (TimeoutException, NoSuchElementException):

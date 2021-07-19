@@ -88,7 +88,8 @@ class BatchHomePage:
         return self.driver.find_element_by_id("week-num")
 
     def associate_name(self):
-        return self.driver.find_element_by_id("associate-name-0")
+        wait = WebDriverWait(self.driver, 2)
+        return wait.until(EC.element_to_be_clickable((By.ID, "associate-name-0")))
 
     def notes_box(self):
         return self.driver.find_element_by_id("note_text")
@@ -100,4 +101,9 @@ class BatchHomePage:
         return self.driver.find_element_by_id("close_note_modal_btn")
 
     def assessment_average(self):
-        return self.driver.find_element_by_id("average1")
+        wait = WebDriverWait(self.driver, 2)
+        return wait.until(EC.presence_of_element_located((By.ID, "avg-data-0")))
+
+    def save_message(self):
+        wait = WebDriverWait(self.driver, 3)
+        return wait.until(EC.visibility_of_element_located((By.ID, "batch_home_alerts")))

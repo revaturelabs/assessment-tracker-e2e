@@ -19,7 +19,7 @@ def step_impl(context, number: int):
 @when(u'The Instructor clicks on an associate\'s name')
 def step_impl(context):
     try:
-        WebDriverWait(context.driver, 1).until(
+        WebDriverWait(context.driver, 3).until(
             EC.element_to_be_clickable((By.ID, "associate-name-0"))
         )
     except (TimeoutException, NoSuchElementException):

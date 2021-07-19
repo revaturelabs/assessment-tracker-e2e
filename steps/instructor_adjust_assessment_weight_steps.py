@@ -11,13 +11,6 @@ global dial_value
 
 @when('The Instructor clicks on a quiz')
 def instructor_selects_a_quiz(context):
-    try:
-        WebDriverWait(context.driver, 2).until(
-            EC.element_to_be_clickable((By.CSS_SELECTOR, "a[onclick*='.assessment']"))
-        )
-    except NoSuchElementException:
-        assert False
-
     context.batch_home_page.week1_assessment_btn().click()
 
 
