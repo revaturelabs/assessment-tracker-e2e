@@ -2,7 +2,7 @@ import time
 
 from behave import when, then
 from selenium.webdriver.common.by import By
-from selenium.common.exceptions import TimeoutException
+from selenium.common.exceptions import TimeoutException, NoSuchElementException
 from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 
@@ -51,8 +51,8 @@ def step_impl(context, name, assessment):
     assessment_index = -1
     for i, a in enumerate(context.assessments_page.table_head()):
         if a.text == assessment:
-            assessment_index = i 
-    
+            assessment_index = i
+
     name_index = -1
     for i in range(len(context.assessments_page.table_rows()) - 1):
         if context.driver.find_element_by_id(f"associate-name-{i}").text == name:
@@ -60,14 +60,12 @@ def step_impl(context, name, assessment):
 
     context.driver.find_element_by_id(f"grade-data-{name_index}-{assessment_index - 1}").send_keys(42)
 
+
 @when(u'The Instructor clicks the save score button')
 def step_impl(context):
     context.assessments_page.save_grades_button().click()
 
+
 @then(u'A message should tell the Instructor that their grade was saved')
 def step_impl(context):
-    try:
-        WebDriverWait(context.driver, 1).until(EC.visibility_of_element_located((By.ID, "batch_home_alerts")))
-        assert True
-    except TimeoutException:
-        assert False
+    assert context.batch_home_page.save_message().text == "Successfully updated grade table.

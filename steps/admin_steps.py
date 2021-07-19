@@ -10,14 +10,14 @@ from selenium.webdriver.support import expected_conditions as EC
 def step_impl(context):
     context.driver.get("http://adam-ranieri-batch-1019.s3-website-us-east-1.amazonaws.com/")
     try:
-        WebDriverWait(context.driver, 1).until(
+        WebDriverWait(context.driver, .5).until(
             EC.presence_of_element_located((By.ID, "panels"))
         )
     # this code will only execute if the user is NOT logged in as an admin (could be logged in as a trainer or not
     # logged in at all)
     except TimeoutException:
         try:
-            WebDriverWait(context.driver, 1).until(
+            WebDriverWait(context.driver, .5).until(
                 EC.presence_of_element_located((By.ID, "yearsWorked"))
             )
             # this code will only execute if the user is logged in as a trainer
@@ -29,7 +29,7 @@ def step_impl(context):
             admin_login(context)
     # final test to check if the user is logged in as an admin
     try:
-        WebDriverWait(context.driver, 5).until(
+        WebDriverWait(context.driver, 2).until(
             EC.presence_of_element_located((By.ID, "panels"))
         )
     except NoSuchElementException:
@@ -37,6 +37,9 @@ def step_impl(context):
 
 
 def admin_login(context):
+    # this line fixes a bug I encountered where the https version of the site kept getting loaded for some reason,
+    # which breaks the login function
+    context.driver.get("http://adam-ranieri-batch-1019.s3-website-us-east-1.amazonaws.com/")
     context.home_page.login_button().click()
     context.driver.implicitly_wait(1)
     context.home_page.login_credentials().send_keys("admin@revature.com")
