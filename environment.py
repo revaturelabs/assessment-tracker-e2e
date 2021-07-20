@@ -22,5 +22,6 @@ def before_all(context: Context):
 
     context.driver.maximize_window()
 
+
 def after_all(context: Context):
     context.driver.quit()
