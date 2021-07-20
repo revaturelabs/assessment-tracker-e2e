@@ -52,7 +52,7 @@ def instructor_login(context):
 def step_impl(context, batch: str):
     try:
         WebDriverWait(context.driver, 3).until(
-            EC.text_to_be_present_in_element((By.ID, "batch_2020"), "2")
+            EC.text_to_be_present_in_element((By.ID, "year_2020"), "2")
         )
     except NoSuchElementException:
         assert False
