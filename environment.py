@@ -7,6 +7,7 @@ from poms.assessments import AssessmentsPage
 from poms.batch_home_page import BatchHomePage
 from poms.home_page import HomePage
 from poms.nav_bar_page import NavBarPage
+from poms.admin_averages_page import AdminAveragesPage
 
 
 def before_all(context: Context):
@@ -19,6 +20,7 @@ def before_all(context: Context):
     context.assessments_page = AssessmentsPage(context.driver)
     context.nav_bar_page = NavBarPage(context.driver)
     context.admin_page = AdminPage(context.driver)
+    context.admin_average_page = AdminAveragesPage(context.driver)
 
     context.driver.maximize_window()
 

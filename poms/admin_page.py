@@ -54,3 +54,6 @@ class AdminPage:
 	   
     def submit_new_associate_button(self):
 	    return self.driver.find_element_by_id('submitAddButton')
+
+    def view_averages_button(self):
+        return self.driver.find_element_by_id('assessmentsBtn')
