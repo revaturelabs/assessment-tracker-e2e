@@ -22,7 +22,6 @@ def before_all(context: Context):
     context.admin_page = AdminPage(context.driver)
     context.admin_average_page = AdminAveragesPage(context.driver)
 
-    context.driver.implicitly_wait(2)
     context.driver.maximize_window()
 
 
