@@ -68,4 +68,4 @@ def step_impl(context):
 
 @then(u'A message should tell the Instructor that their grade was saved')
 def step_impl(context):
-    assert context.batch_home_page.save_message().text == "Successfully updated grade table.
+    assert context.batch_home_page.save_message().text == "Successfully updated grade table."
