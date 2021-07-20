@@ -20,9 +20,7 @@ def before_all(context: Context):
     context.nav_bar_page = NavBarPage(context.driver)
     context.admin_page = AdminPage(context.driver)
 
-    context.driver.implicitly_wait(2)
     context.driver.maximize_window()
-
 
 def after_all(context: Context):
     context.driver.quit()
