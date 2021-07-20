@@ -62,11 +62,12 @@ def step_impl(context):
 @then(u'The new note is saved')
 def step_impl(context):
     try:
-        WebDriverWait(context.driver, 1).until(
+        WebDriverWait(context.driver, 2).until(
             EC.element_to_be_clickable((By.ID, "associate-name-0"))
         )
     except (TimeoutException, NoSuchElementException):
         assert False
     context.batch_home_page.associate_name().click()
+    sleep(.5)
     assert context.batch_home_page.notes_box().get_attribute('value') == note_to_add
     context.batch_home_page.close_note().click()
